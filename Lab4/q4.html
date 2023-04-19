@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <script>
+            const marks = [59, 69, 62, 72, 75, 29, 100, 67, 92, 99];
+            function average(x)
+            {
+                let s=0;
+                for (let i=0; i<10; i++)
+                    s+=x[i];
+                return s/10;
+            }
+            function max(x)
+            {
+                let m=x[0];
+                for (let i=0; i<10; i++)
+                    if (x[i]>m)
+                        m=x[i];
+                return m;
+            }
+            function min(x)
+            {
+                let m=x[0];
+                for (let i=0; i<10; i++)
+                    if (x[i]<m)
+                        m=x[i];
+                return m;
+            }
+            document.write("Average: "+average(marks));
+            document.write("<br>Max: "+max(marks));
+            document.write("<br>Min: "+min(marks));
+        </script>
+    </body>
+</html>

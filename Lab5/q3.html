@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Change Paragraph Content</title>
+	<script>
+		function changeContent() {
+			var paragraph1 = document.getElementById("p1");
+			var paragraph2 = document.getElementById("p2");
+			var paragraph3 = document.getElementById("p3");
+
+			paragraph1.innerHTML = "This is the new content for paragraph 1.";
+			paragraph2.innerHTML = "This is the new content for paragraph 2.";
+			paragraph3.innerHTML = "This is the new content for paragraph 3.";
+		}
+	</script>
+</head>
+<body>
+	<h1>Change Paragraph Content</h1>
+	<p id="p1">This is the content for paragraph 1.</p>
+	<p id="p2">This is the content for paragraph 2.</p>
+	<p id="p3">This is the content for paragraph 3.</p>
+	<button onclick="changeContent()">Change Content</button>
+</body>
+</html>

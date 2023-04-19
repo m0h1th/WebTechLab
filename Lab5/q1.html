@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>String Operations</title>
+	<script>
+		function stringOperations() {
+		let sentence = prompt("Enter a sentence:");
+		let length = sentence.length;
+
+		let words = sentence.split(" ").length;
+
+		let reverse = sentence.split("").reverse().join("");
+
+		let vowels = 0, consonants = 0;
+		for (let i = 0; i < sentence.length; i++) {
+			let letter = sentence[i].toLowerCase();
+			if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
+				vowels++;
+			} else if (letter >= "a" && letter <= "z") {
+				consonants++;
+			}
+		}
+
+		let word = prompt("Enter a word to search:");
+		let count = 0;
+		if (sentence.includes(word)) {
+			let index = sentence.indexOf(word);
+			while (index !== -1) {
+				count++;
+				index = sentence.indexOf(word, index + 1);
+			}
+		}
+
+		let replace = sentence.replace(/i/g, "y");
+
+		let frequency = {};
+		let duplicates = "";
+		for (let i = 0; i < sentence.length; i++) {
+			let letter = sentence[i].toLowerCase();
+			if (letter >= "a" && letter <= "z") {
+				if (frequency[letter]) {
+					frequency[letter]++;
+					if (duplicates.indexOf(letter) === -1) {
+						duplicates += letter + " ";
+					}
+				} else {
+					frequency[letter] = 1;
+				}
+			}
+		}
+
+		// Display the results
+		document.getElementById("length").innerHTML = "Length: " + length;
+		document.getElementById("words").innerHTML = "Words: " + words;
+		document.getElementById("reverse").innerHTML = "Reverse: " + reverse;
+		document.getElementById("vowels").innerHTML = "Vowels: " + vowels;
+		document.getElementById("consonants").innerHTML = "Consonants: " + consonants;
+		document.getElementById("wordCount").innerHTML = "Word Count of '" + word + "': " + count;
+		document.getElementById("replace").innerHTML = "Replace 'i' with 'y': " + replace;
+		document.getElementById("frequency").innerHTML = "Frequency: " + JSON.stringify(frequency);
+		document.getElementById("duplicates").innerHTML = "Duplicate characters: " + duplicates;
+	}
+</script>
+</head>
+<body>
+	<button onclick="stringOperations()">Perform Operations</button>
+	<p id="length"></p>
+	<p id="words"></p>
+	<p id="reverse"></p>
+	<p id="vowels"></p>
+	<p id="consonants"></p>
+	<p id="wordCount"></p>
+	<p id="replace"></p>
+	<p id="frequency"></p>
+	<p id="duplicates"></p>
+</body>
+</html>

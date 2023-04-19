@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Swap Variables Example</title>
+	<script>
+		function swapVariables() {
+			var a = "Hello";
+			var b = "World";
+			document.getElementById("para1").innerHTML = "Before swapping: a = " + a + ", b = " + b;
+			var temp = a;
+			a = b;
+			b = temp;
+			document.getElementById("para2").innerHTML = "After swapping: a = " + a + ", b = " + b;
+		}
+	</script>
+</head>
+<body>
+	<p id="para1"></p>
+	<p id="para2"></p>
+	<button onclick="swapVariables()">Swap Variables</button>
+</body>
+</html>
