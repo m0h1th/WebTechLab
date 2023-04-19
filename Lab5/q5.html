@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Table with Button</title>
+	<style type="text/css">
+		table {
+			background-color: #fff;
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+	<button id="mybutton">Increase Border Size</button>
+	<table id="mytable" border="1">
+		<tr>
+			<th>Company</th>
+			<th>Contact</th>
+			<th>Country</th>
+		</tr>
+		<tr>
+			<td>Alfreds Futterkiste</td>
+			<td>Maria Anders</td>
+			<td>Germany</td>
+		</tr>
+		<tr>
+			<td>Centro comercial Moctezuma</td>
+			<td>Francisco Chang</td>
+			<td>Mexico</td>
+		</tr>
+	</table>
+
+	<script>
+		// Add click event listener to the button
+		document.getElementById("mybutton").addEventListener("click", function() {
+			increaseBorderSize();
+			changeTableBackgroundColor("blue");
+			changeTableContentColor("white");
+			changeColumnNames();
+		});
+
+		// Increase the border size of the table
+		function increaseBorderSize() {
+			var table = document.getElementById("mytable");
+			var borderSize = parseInt(table.getAttribute("border")) + 1;
+			table.setAttribute("border", borderSize);
+		}
+
+		// Change the background color of the table
+		function changeTableBackgroundColor(color) {
+			var table = document.getElementById("mytable");
+			table.style.backgroundColor = color;
+		}
+
+		// Change the content color of the table
+		function changeTableContentColor(color) {
+			var table = document.getElementById("mytable");
+			table.style.color = color;
+		}
+
+		// Change the column names
+		function changeColumnNames() {
+			var thList = document.getElementsByTagName("th");
+			thList[0].innerHTML = "column1";
+			thList[1].innerHTML = "column2";
+			thList[2].innerHTML = "column3";
+		}
+	</script>
+</body>
+</html>
