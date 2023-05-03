@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Number Puzzle</title>
+  </head>
+  <body>
+    <h2>Number Puzzle</h2>
+    <table>
+      <tr>
+        <td><input type="number" id="cell11"></td>
+        <td><input type="number" id="cell12"></td>
+        <td><input type="number" id="cell13"></td>
+        <td><input type="number" id="cell14"></td>
+      </tr>
+      <tr>
+        <td><input type="number" id="cell21"></td>
+        <td><input type="number" id="cell22"></td>
+        <td><input type="number" id="cell23"></td>
+        <td><input type="number" id="cell24"></td>
+      </tr>
+      <tr>
+        <td><input type="number" id="cell31"></td>
+        <td><input type="number" id="cell32"></td>
+        <td><input type="number" id="cell33"></td>
+        <td><input type="number" id="cell34"></td>
+      </tr>
+      <tr>
+        <td><input type="number" id="cell41"></td>
+        <td><input type="number" id="cell42"></td>
+        <td><input type="number" id="cell43"></td>
+        <td><input type="number" id="cell44"></td>
+      </tr>
+    </table>
+    <button type="button" onclick="checkSolution()">Check Solution</button>
+    <script>
+      function checkSolution() {
+        // Get the values of the input fields
+        var cell11 = parseInt(document.getElementById("cell11").value);
+        var cell12 = parseInt(document.getElementById("cell12").value);
+        var cell13 = parseInt(document.getElementById("cell13").value);
+        var cell14 = parseInt(document.getElementById("cell14").value);
+        var cell21 = parseInt(document.getElementById("cell21").value);
+        var cell22 = parseInt(document.getElementById("cell22").value);
+        var cell23 = parseInt(document.getElementById("cell23").value);
+        var cell24 = parseInt(document.getElementById("cell24").value);
+        var cell31 = parseInt(document.getElementById("cell31").value);
+        var cell32 = parseInt(document.getElementById("cell32").value);
+        var cell33 = parseInt(document.getElementById("cell33").value);
+        var cell34 = parseInt(document.getElementById("cell34").value);
+        var cell41 = parseInt(document.getElementById("cell41").value);
+        var cell42 = parseInt(document.getElementById("cell42").value);
+        var cell43 = parseInt(document.getElementById("cell43").value);
+        var cell44 = parseInt(document.getElementById("cell44").value);
+        
+        // Calculate the sums of the rows and columns
+        var row1 = cell11 + cell12 + cell13 + cell14;
+        var row2 = cell21 + cell22 + cell23 + cell24;
+        var row3 = cell31 + cell32 + cell33 + cell34;
+        var row4 = cell41 + cell42 + cell43 + cell44;
+        var col1 = cell11 + cell21 + cell31 + cell41;
+        var col2 = cell12 + cell22 + cell32 + cell42;
+        var col3 = cell13 + cell23 + cell33 + cell43;
+        var col4 = cell14 + cell24 + cell34 + cell44;
+        
+        // Check if all the sums are equal
+        if (row1 === row2 && row1 === row3 && row1 === row4 && row1 === col1 && row1 === col2 && row1 === col3 && row1 === col4) {
+            alert("Congratulations! You solved the puzzle!");
+          } else {
+            alert("Sorry, that is not the correct solution. Please try again.");
+          }
+        }
+      </script>
+    </body>
+</html>
+      

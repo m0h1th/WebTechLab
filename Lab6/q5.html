@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Random Number Generator</title>
+  </head>
+  <body>
+    <h2>Random Number Generator</h2>
+    <label for="num1">Enter the first number:</label>
+    <input type="number" id="num1">
+    <br>
+    <label for="num2">Enter the second number:</label>
+    <input type="number" id="num2">
+    <br>
+    <button type="button" onclick="generateRandomNumber()">Generate Random Number</button>
+    <p id="result"></p>
+    <script>
+      function generateRandomNumber() {
+        var num1 = parseInt(document.getElementById("num1").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Please enter valid numbers.");
+          return;
+        }
+        
+        if (num2 < num1) {
+          var temp = num1;
+          num1 = num2;
+          num2 = temp;
+        }
+        var randomNum = Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+        document.getElementById("result").innerHTML = "The random number between " + num1 + " and " + num2 + " is " + randomNum + ".";
+      }
+    </script>
+  </body>
+</html>

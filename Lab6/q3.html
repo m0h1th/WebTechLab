@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Extract Odd-Index Characters</title>
+  </head>
+  <body>
+    <h2>Extract Odd-Index Characters</h2>
+    <label for="inp">Enter a string:</label>
+    <input type="text" id="inp"><br><br>
+    <button type="button" onclick="extractOddIndexChars()">Extract</button>
+    <p>Result: <span id="result"></span></p>
+    <script>
+      function extractOddIndexChars() {
+        var inp = document.getElementById("inp").value;
+        var result = "";
+        for (var i = 0; i < inp.length; i++) {
+          if (i % 2 !== 0) {
+            result += inp.charAt(i);
+          }
+        }
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
